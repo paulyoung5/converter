@@ -1,28 +1,28 @@
-== README
+== converter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple, compact currency converter offering 31 different currencies. Reference foreign exchange rates used are taken from the European Central Bank and are available for every date in the previous 4 months. The base currency is the Euro.
 
-Things you may want to cover:
+Some currencies included:
 
-* Ruby version
+* USD
+* GBP
+* HKD
+* AUD
+* and 27
 
-* System dependencies
+== Enviroment
 
-* Configuration
+* Ruby v2.1.1
 
-* Database creation
+== Database
 
-* Database initialization
+Exchange rates for each currency are stored for every reference date in the database using Active Record.
 
-* How to run the test suite
+When installing, remember to run rake db:migrate to set up the necessary tables.
 
-* Services (job queues, cache servers, search engines, etc.)
+Tip:
+To pull in the latest 4 months, call rake db:seed in the command line.
 
-* Deployment instructions
+== Testing
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+System tests to ensure form validation and accuracy of data can be carried out by calling rake test.
