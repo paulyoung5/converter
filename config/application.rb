@@ -26,9 +26,5 @@ module Converter
     config.serve_static_files = true
     config.assets.paths << Rails.root.join('vendor', 'assets')
     
-    config.assets.precompile += [
-      'background.png'
-    ]
-    
   end
 end

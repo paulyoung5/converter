@@ -4,8 +4,11 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.postgresql
+  adapter: postgresql
+  host: 'ec2-107-20-136-89.compute-1.amazonaws.com'
+  username: 'xhrmgswzdavhhu'
+  password: 'd8gNRvC_HDc_tnV_aIB22t_1Ro'
+  database: 'dc37cfur0rtjob'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
