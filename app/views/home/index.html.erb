@@ -1,0 +1,24 @@
+<main id="converter">
+	<h1>Convert money</h1>
+
+	<%=form_tag('/exchangeRate', class: 'ui form', method: 'post') do %>
+		<div class="field">
+				<%= text_field(:exchange_rate, :amount, class: 'ui input amount', placeholder: 'Enter an amount') %>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<%= label_tag("FROM") %>
+				<%= collection_select(:exchange_rate, :currency_from, ExchangeRate.take(31), :currency, :currency) %>
+			</div>
+			<div class="field">
+				<%= label_tag("TO") %>
+				<%= collection_select(:exchange_rate, :currency_to, ExchangeRate.take(31), :currency, :currency) %>
+			</div>
+		</div>
+		<div class="field">
+			<%= text_field(:exchange_rate, :date, class: 'ui input jquery-ui-date', placeholder: 'Choose a reference date') %>
+		</div>
+		<%= submit_tag("Convert", class: 'button') %>
+	<% end %>
+
+</main>

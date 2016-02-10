@@ -1,0 +1,145 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css);
+
+$veryLightGrey: #dfdfdf;
+$lightGrey: #a3a3a3;
+$mediumGrey: #525252;
+$darkGrey: #333;
+
+$blue: #2374DE;
+
+$break-small: 750px;
+
+body {
+	font: 12px 'Merriweather Sans';
+}
+
+main#converter {
+	
+	background: url('background.png') no-repeat;
+	background-position: top center;
+	
+	width:750px;
+	margin: 5em auto 0 auto;
+	padding: 4em;
+	text-align: center;
+	border-radius:5px;
+	
+	-webkit-box-shadow: 0px 0px 11px 0px $veryLightGrey;
+	-moz-box-shadow: 0px 0px 11px 0px $veryLightGrey;
+	box-shadow: 0px 0px 11px 0px $veryLightGrey;
+	
+	h1 {
+		font: 4em 'Montserrat';
+		color: $darkGrey;
+		text-align: left;
+		margin-top: 1em;
+		
+		span {
+			color:$blue;
+			border-bottom: 1px dotted $blue;
+		}
+		
+	}
+	
+	.button {
+		border: 0;
+		border-radius:40px;
+		background-color: $blue;
+		color:white;
+		padding:1em 1.5em;
+		font-size:1.5em;
+		display:inline-block;
+		margin-top:1.5em;
+	}
+	
+	form {
+		margin-top:4em;
+		
+		.button {
+			margin-top:0;
+		}
+		
+		input{
+			padding: 1em;
+			border: 0;
+			border-radius: 0;
+			border-bottom: 2px solid $veryLightGrey;
+			color: $lightGrey;
+		}
+		
+		input.amount {
+			font-size:2em;
+			padding: 0.5em;
+		}
+		
+		input:focus {
+			border-bottom: 2px solid $blue;
+			color: $blue;
+		}
+		
+		select {
+			background: transparent;
+			-webkit-appearance:none;
+			border-radius:0;
+			padding: 1em 1.5em;
+			height:3.4em;
+			border:0;
+			border-bottom: 2px solid $veryLightGrey;
+			color: $lightGrey;
+		}
+		
+		label {
+			color:$lightGrey;
+			text-align:left;
+			text-transform: uppercase;
+		}
+		
+		.field {
+			margin-bottom:3em;
+		}
+		
+	}
+	
+	@media (max-width: $break-small) {
+		width: 100% !important;
+		border-left:0;
+		border-right:0;
+		
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		
+		margin:0;
+		
+		h1 {
+			margin-top:2em;
+			text-align: center;
+		}
+		
+		form {
+			width:100%;
+		}
+		
+	}	
+	
+}
+
+div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+	border: 3px solid $veryLightGrey;
+	padding:1em;
+	width:28em;
+}
+
+div.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+	background-image:none;
+	background-color:$blue;
+	color:white;
+	border: 0;
+}
