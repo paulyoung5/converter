@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//= depend_on_asset "logo.png"
-
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css);
@@ -24,7 +22,7 @@ body {
 
 main#converter {
 	
-	background: url('<%= asset_path("background.png") %>') no-repeat;
+	background: url('background.png') no-repeat;
 	background-position: top center;
 	
 	width:750px;
