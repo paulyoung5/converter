@@ -19,17 +19,23 @@ class CurrencyExchangeController < ApplicationController
 		
 		rates = ExchangeRate.at(date, currency_from, currency_to)
 		
-		# First, convert to euros by dividing by base currency rate
-		# Then convert to desired currency by multiplying euros by the rate of desired currency
-		newAmount = ((amount / rates[0]) * rates[1]).round(2)
+		if rates.nil?
+			raise 'Error trying to find currency rates for that reference date'
+		else
 		
-		# Finally, store the relevant data as a hash for use by the view
-		@result = {
-				"previousAmount" => amount.to_s,
-				"currencyFrom" => currency_from,
-				"currencyTo" => currency_to,
-				"newAmount" => newAmount.to_s
-		}
+			# First, convert to euros by dividing by base currency rate
+			# Then convert to desired currency by multiplying euros by the rate of desired currency
+			newAmount = ((amount / rates[0]) * rates[1]).round(2)
+			
+			# Finally, store the relevant data as a hash for use by the view
+			@result = {
+					"previousAmount" => amount.to_s,
+					"currencyFrom" => currency_from,
+					"currencyTo" => currency_to,
+					"newAmount" => newAmount.to_s
+			}
+			
+		end
 		
 	end
 end
