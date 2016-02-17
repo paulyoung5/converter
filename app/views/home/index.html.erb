@@ -1,7 +1,7 @@
 <main id="converter">
 	<h1>Convert money</h1>
 	
-	<script>console.log(<%= @dates.inspect %>)</script>
+	<script>console.log(<%= @dates.to_a %>)</script>
 
 	<%=form_tag('/exchangeRate', class: 'ui form', method: 'post') do %>
 		<div class="field">
