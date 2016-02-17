@@ -11,7 +11,7 @@ class CurrencyExchangeController < ApplicationController
 		@errors = Array.new
 		
 		# Check everything was filled out correctly
-		if date.present? or amount.present? or currency_from.present? or currency_to.present?
+		if date.blank? or amount.blank? or currency_from.blank? or currency_to.blank?
 			
 			@errors.push("One or more fields were not filled out.")
 		
@@ -20,9 +20,7 @@ class CurrencyExchangeController < ApplicationController
 			rates = ExchangeRate.at(date, currency_from, currency_to)
 		
     		if rates.nil?
-    			@errors.push("There was an error when trying to find currency rates for that reference date.")
-    		else
-    		
+    			
     			# First, convert to euros by dividing by base currency rate
     			# Then convert to desired currency by multiplying euros by the rate of desired currency
     			newAmount = ((amount / rates[0]) * rates[1]).round(2)
@@ -34,6 +32,10 @@ class CurrencyExchangeController < ApplicationController
     					"currencyTo" => currency_to,
     					"newAmount" => newAmount.to_s
     			}
+    			
+    		else
+    		
+    			@errors.push("There was an error when trying to find currency rates for that reference date.")
     			
     		end
 

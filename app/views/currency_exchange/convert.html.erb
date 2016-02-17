@@ -9,7 +9,7 @@
 	<h1><span>Sorry!</span> There were some issues trying to perform conversion.</h1>
 	
 	<ol>
-	<%= @errors.each { |x| puts "<li>" + x + "</li>" } %>
+	<%= @errors.each { |x| puts "<li>" + x.to_s + "</li>" } %>
 	</ol>
 	
 	<% end %>
