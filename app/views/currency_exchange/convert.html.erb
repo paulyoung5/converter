@@ -1,6 +1,6 @@
 <main id="converter">
 	
-	<% if @errors.present? %>
+	<% if @errors.empty? %>
 	
 	<h1>For <span><%= @result['previousAmount'] %> <%= @result['currencyFrom'] %></span>,<br>you can get <span><%= @result['newAmount'] %> <%= @result['currencyTo'] %></span></h1>
 	
