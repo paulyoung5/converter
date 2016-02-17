@@ -21,7 +21,7 @@ class CurrencyExchangeController < ApplicationController
 		
     		if rates.blank?
     			
-    			@errors.push("There was an error when trying to find currency rates for that reference date.")
+    			@errors.push("There was an error when trying to find currency rates for that reference date. Please try an earlier date.")
     			
     		else
     		
