@@ -19,8 +19,12 @@ class CurrencyExchangeController < ApplicationController
 		
 			rates = ExchangeRate.at(date, currency_from, currency_to)
 		
-    		if rates.nil?
+    		if rates.blank?
     			
+    			@errors.push("There was an error when trying to find currency rates for that reference date.")
+    			
+    		else
+    		
     			# First, convert to euros by dividing by base currency rate
     			# Then convert to desired currency by multiplying euros by the rate of desired currency
     			newAmount = ((amount / rates[0]) * rates[1]).round(2)
@@ -32,10 +36,6 @@ class CurrencyExchangeController < ApplicationController
     					"currencyTo" => currency_to,
     					"newAmount" => newAmount.to_s
     			}
-    			
-    		else
-    		
-    			@errors.push("There was an error when trying to find currency rates for that reference date.")
     			
     		end
 
