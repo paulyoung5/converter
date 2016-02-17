@@ -11,5 +11,6 @@ $ ->
     	hideIfNoPrevNext: true,
     	dateFormat: 'yy-mm-dd',
     	minDate: minDate,
-    	maxDate: today
+    	maxDate: today,
+    	defaultDate: today
     })
