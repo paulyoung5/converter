@@ -6,9 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'open-uri'
+require 'uri'
+
 ExchangeRate.delete_all
 
-doc = Nokogiri::XML(File.open("app/assets/xml/rates.xml"))
+doc = Nokogiri::XML(open("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml").read)
 
 doc.remove_namespaces!
 

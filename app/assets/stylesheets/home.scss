@@ -13,6 +13,7 @@ $mediumGrey: #525252;
 $darkGrey: #333;
 
 $blue: #2374DE;
+$red: #de3539;
 
 $break-small: 750px;
 
@@ -61,6 +62,13 @@ main#converter {
 	
 	form {
 		margin-top:4em;
+		
+		.error {
+    		color:$red;
+    		font-weight:normal;
+    		text-transform:none;
+    		padding:1em;
+		}
 		
 		.button {
 			margin-top:0;

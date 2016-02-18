@@ -35,6 +35,11 @@ main#converter {
     margin-top: 1.5em; }
   main#converter form {
     margin-top: 4em; }
+    main#converter form .error {
+      color: #de3539;
+      font-weight: normal;
+      text-transform: none;
+      padding: 1em; }
     main#converter form .button {
       margin-top: 0; }
     main#converter form input {

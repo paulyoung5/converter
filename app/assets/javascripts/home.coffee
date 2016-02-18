@@ -3,7 +3,31 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	today = new Date()
+	
+	$('.ui.form').validate({
+            
+            
+        rules: {
+            "exchange_rate[amount]": {
+                required: true
+            },
+            "exchange_rate[currency_from]": {
+                required: true
+            },
+            "exchange_rate[currency_to]": {
+                required: true
+            },
+            "exchange_rate[date]": {
+                required: true
+            }
+        }
+        
+
+    })
+	
+	maxDate = new Date()
+	maxDate.setDate(maxDate.getDate() - 1)
+	
 	minDate = new Date()
 	minDate.setMonth(minDate.getMonth()-3)
 	
@@ -11,6 +35,6 @@ $ ->
     	hideIfNoPrevNext: true,
     	dateFormat: 'yy-mm-dd',
     	minDate: minDate,
-    	maxDate: today,
-    	defaultDate: today
+    	maxDate: maxDate,
+    	defaultDate: maxDate
     })
